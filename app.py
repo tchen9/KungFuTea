@@ -1,7 +1,7 @@
 #importing flask submodules
 from flask import Flask, render_template, request, redirect, url_for, session, flash
 #importing our own modules
-import auth
+from utils import auth
 #importing os for urandom()
 import os
 
