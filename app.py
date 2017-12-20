@@ -12,6 +12,8 @@ def make_secret_key():
 
 app.secret_key = make_secret_key()
 
+app.jinja_env.globals.update(logged_in = auth.logged_in)
+
 #index: Home page. Renders index.html
 @app.route('/')
 @app.route('/index')
