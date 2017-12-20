@@ -18,7 +18,8 @@
 
         <!-- My Stylesheet -->
         <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/custom.css') }}"/>
-
+        {% block customcss %}
+        {% endblock %}
         <title>
         {% block title %}
         {% endblock %}
@@ -31,7 +32,7 @@
         <nav class="navbar navbar-expand-md bg-dark navbar-dark fixed-top">
             <!-- Brand -->
             <a class="navbar-brand" href="{{ url_for('index') }}">
-                <img height="40" src="{{ url_for('static', filename='img/logo.png') }}"
+                <img height="40" src="{{ url_for('static', filename='img/logo.png') }}"/>
             </a>
 
             <!-- Toggler/collapsibe Button -->
@@ -43,7 +44,6 @@
             <div class="collapse navbar-collapse" id="collapsibleNavbar">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item active">
-                        <img
                         <a class="nav-link" href="#">Home
                             <span class="sr-only">(current)</span>
                         </a>
