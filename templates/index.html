@@ -1,8 +1,15 @@
 {% extends 'frame.html' %}
 
+{% block customcss %}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/index.css') }}" />
+{% endblock %}
+
 {% block title %}
 KaFooT - Homepage
 {% endblock %}
 
 {% block content %}
+<div>
+    <img class="logoimg" src="{{ url_for('static', filename='img/logo.png') }}" width="720">
+</div>
 {% endblock %}
