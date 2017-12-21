@@ -69,6 +69,22 @@ def register():
             flash('Registration error: The passwords you entered do not match.')
     return render_template('register.html')
 
+@app.route('/profile')
+def profile():
+    return render_template('profile.html')
+
+@app.route('/categories')
+def categories():
+    return render_template('categories.html')
+
+@app.route('/question')
+def question():
+    return render_template('question.html')
+
+@app.route('/results')
+def results():
+    return render_template('results.html')
+    
 if __name__ == '__main__':
     app.debug = True
     app.run()
