@@ -20,6 +20,11 @@ app.jinja_env.globals.update(logged_in = auth.logged_in)
 def index():
     return render_template('index.html')
 
+#categories: Categories list page. Renders categories.html.
+@app.route('/categories')
+def categories():
+    return render_template('categories.html')
+
 #login: Login page. Renders login.html. Redirects to index after logging in.
 @app.route('/login', methods=['GET', 'POST'])
 def login():

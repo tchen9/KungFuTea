@@ -1,5 +1,25 @@
 {% extends 'frame.html' %}
 
+{% block title %}
+KaFooT - Categories
+{% endblock %}
+
+{% block activenav %}
+<li class="nav-item">
+    <a class="nav-link" href="/">Home
+        <span class="sr-only">(current)</span>
+    </a>
+</li>
+<li class="nav-item active">
+    <a class="nav-link" href="{{ url_for('categories') }}">Categories</a>
+</li>
+{% if logged_in() %}
+<li class="nav-item">
+    <a class="nav-link" href="#">My Stats</a>
+</li>
+{% endif %}
+{% endblock %}
+
 {% block content %}
 
 <form method="GET" action="/question">
