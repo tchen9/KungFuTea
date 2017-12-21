@@ -73,10 +73,6 @@ def register():
 def profile():
     return render_template('profile.html')
 
-@app.route('/categories')
-def categories():
-    return render_template('categories.html')
-
 @app.route('/question')
 def question():
     return render_template('question.html')
