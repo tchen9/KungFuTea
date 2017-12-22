@@ -12,7 +12,7 @@ var wait = function(ms) {
 
 var addCount = function(e) {
     counter++;
-    display_count.innerHTML = "Easter Egg! You've clicked this logo " + boldCounter() + " times!";
+    display_count.innerHTML = "Easter Egg! You've clicked this logo or pressed the z / x keys " + boldCounter() + " times!";
 };
 
 var boldCounter = function(e) {
@@ -21,3 +21,12 @@ var boldCounter = function(e) {
 };
 
 img.addEventListener('click', addCount);
+
+var body = document.querySelector('body');
+
+body.onkeydown = function(e) {
+    var key_code = e.keyCode;
+    if (key_code == 90 || key_code == 88) {
+        addCount();
+    }
+};
