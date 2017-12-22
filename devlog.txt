@@ -13,3 +13,6 @@ Added custom js / css
 -e linK -- 2017-12-22 07:51:08
 Added an easter egg when you click the logo on the homepage
 
+-e linK -- 2017-12-22 14:58:56
+Updated Easter Egg
+
