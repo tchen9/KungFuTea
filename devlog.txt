@@ -10,3 +10,6 @@ Added more templates
 -e linK -- 2017-12-21 10:20:28
 Added custom js / css
 
+-e linK -- 2017-12-22 07:51:08
+Added an easter egg when you click the logo on the homepage
+
