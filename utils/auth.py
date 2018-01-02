@@ -1,21 +1,21 @@
-import os, database, hashlib
+import os, database, hashlib, database
 from flask import session
 
 #encrypts passwords
 def encrypt(password):
-    return hashlib.sha224(string).hexdigest()
+    return hashlib.sha224(password).hexdigest()
 
 #creates a new user
 def new_user(username, password):
-    return db.adduser(username, encrypt(password))
+    return database.adduser(username, encrypt(password))
 
 #checks password
 def verify(username, password):
-    return encrypt(password) == db.get_pass(username)
+    return encrypt(password) == database.get_password(username)
 
 #checks username
 def user_exists(username):
-    return db.get_pass(username) is not None
+    return database.get_password(username) is not None
 
 #checks to see if logged in
 def logged_in():
