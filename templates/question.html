@@ -1,6 +1,17 @@
 {% extends 'frame.html' %}
 
 {% block content %}
-{{question}}
+<div class="container">
+  <div class="jumbotron">
+    What is 1 + 1?
+    {{question}}
+  </div>
+</div>
 
+<div class="answers">
+  <button type="button" class="btn btn-danger btn-lg btn-block">Answer1</button>
+  <button type="button" class="btn btn-warning btn-lg btn-block">Answer2</button>
+  <button type="button" class="btn btn-success btn-lg btn-block">Answer3</button>
+  <button type="button" class="btn btn-info btn-lg btn-block">Answer4</button>
+</div>
 {% endblock %}
