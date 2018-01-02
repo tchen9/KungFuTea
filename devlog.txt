@@ -16,3 +16,6 @@ Added an easter egg when you click the logo on the homepage
 -e linK -- 2017-12-22 14:58:56
 Updated Easter Egg
 
+-e linK -- 2018-01-02 14:36:06
+Added functions to database.py and updated auth.py to reflect changes
+
