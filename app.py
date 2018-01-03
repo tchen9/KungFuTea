@@ -1,7 +1,7 @@
 #importing flask submodules
 from flask import Flask, render_template, request, redirect, url_for, session, flash
 #importing our own modules
-from utils import auth
+from utils import auth, trivia
 #importing os for urandom()
 import os
 
@@ -71,17 +71,14 @@ def register():
 
 @app.route('/profile')
 def profile():
-    if auth.logged_in():
-        if request.method == 'POST':
-            username = session['username']
-            return auth.update_pass(username, password)
-        return render_template('profile.html')
-    else:
-        flash('Unauthorized: You are not logged in.')
-        return redirect('index')
+    return render_template('profile.html')
 
-@app.route('/question')
+@app.route('/question', methods = ['GET', 'POST'])
 def question():
+    if request.method == 'POST':
+        category = request.form.get('subject')
+    response = trivia.call_api(category)
+    print response[0]['question']
     return render_template('question.html')
 
 @app.route('/results')
