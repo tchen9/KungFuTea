@@ -11,6 +11,8 @@ def new_user(username, password):
 
 #checks password
 def verify(username, password):
+    # print (encrypt(password))
+    # print (database.get_password(username))
     return encrypt(password) == database.get_password(username)
 
 #checks username

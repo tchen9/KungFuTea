@@ -56,9 +56,9 @@ def logout():
 @app.route('/register', methods=['GET', 'POST'])
 def register():
     if request.method == 'POST':
-        username = request.get.form('username')
-        password = request.get.form('password')
-        password_verify = request.get.form('password_verify')
+        username = request.form.get('username')
+        password = request.form.get('password')
+        password_verify = request.form.get('password_verify')
         if password == password_verify:
             if auth.new_user(username, password):
                 flash('Account successfully created!')

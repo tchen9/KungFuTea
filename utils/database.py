@@ -42,11 +42,13 @@ def get_password(username):
     f = "kafoot.db"
     db = sqlite3.connect(f)
     c = db.cursor()
-    c.execute('SELECT password FROM users WHERE username = "%s";' %(username))
+    # print(username)
+    c.execute('SELECT password FROM users WHERE username="%s";' %(username))
     results = c.fetchall()
-    db.close()
     if results == []:
+        db.close()
         return None
     else:
+        db.close()
         return results[0][0]
 
