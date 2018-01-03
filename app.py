@@ -71,7 +71,14 @@ def register():
 
 @app.route('/profile')
 def profile():
-    return render_template('profile.html')
+    if auth.logged_in():
+        if request.method == 'POST':
+            username = session['username']
+            return auth.update_pass(username, password)
+        return render_template('profile.html')
+    else:
+        flash('Unauthorized: You are not logged in.')
+        return redirect('index')
 
 @app.route('/question')
 def question():

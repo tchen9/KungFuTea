@@ -52,3 +52,11 @@ def get_password(username):
         db.close()
         return results[0][0]
 
+def change_password(username, password):
+    f = "kafoot.db"
+    db = sqlite3.connect(f)
+    c = db.cursor()
+    c.execute('UPDATE users SET password="%s" WHERE username="%s";' %(password, username))
+    db.commit()
+    db.close()
+    return True

@@ -9,6 +9,9 @@ def encrypt(password):
 def new_user(username, password):
     return database.adduser(username, encrypt(password))
 
+def update_pass(username, password):
+    return database.change_password(username, encrypt(password))
+
 #checks password
 def verify(username, password):
     # print (encrypt(password))
