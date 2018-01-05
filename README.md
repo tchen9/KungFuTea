@@ -47,7 +47,7 @@
 * Custom categories
 * Wikipedia hookup
 * Bot difficulties
-    * Easy: Skew RNG to higher numbers [6-7)
-    * Normal: Skew RNG to middleground numbers [4-6)
-    * Hard: Skew RNG to lower numbers (2-4)
-    * Insane: Skew RNG to really low numbers (1-2]
+    * Easy: Skew RNG to higher numbers (towards 6)
+    * Normal: Skew RNG to middleground numbers (towards 4)
+    * Hard: Skew RNG to lower numbers (towards 2)
+    * Insane: Skew RNG to really low numbers (towards 1)
