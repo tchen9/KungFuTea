@@ -28,3 +28,6 @@ Made Login / Logout work!
 ahmedF -- 2018-01-03 2:44:00
 added trivia.py and edited categories route and html
 
+linK -- 2018-01-05 08:29:41
+Updated templates so Categories only appears when logged in
+
