@@ -31,3 +31,6 @@ added trivia.py and edited categories route and html
 linK -- 2018-01-05 08:29:41
 Updated templates so Categories only appears when logged in
 
+linK -- 2018-01-05 10:19:29
+Started adding bot logic. Skewed RNG implemented
+
