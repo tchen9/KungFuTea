@@ -19,3 +19,22 @@
 1. Open the terminal
 2. Navigate to the root folder containing log.sh
 3. Run `sh log.sh <lastF> <devmsg>`
+
+---
+
+### Project Progress
+
+**Completed:**
+
+* Login / Register
+* Navbar
+* Easter Egg
+
+**To Do (In order of priority):**
+
+* Actual game
+    * Categories from API
+* User profile
+* Bot logic
+* Custom categories
+* Bot difficulties
