@@ -1,12 +1,14 @@
+from utils import game
 import random
 
 # Returns a randomly generated number in the range skewed towards the given skew value
 # skew: 0-Insane, 1-Hard, 2-Normal, 3-Easy (See README.md for more details)
 def rng(min, max, skew):
-    skew_dic = {0: 4, 1: 2, 2: 0.75, 3: 0.1}
+    skew_dic = {0: 6, 1: 2, 2: 0.75, 3: 0.1}
     result = min + (max - min) * pow(random.random(), skew_dic[skew])
     return result
 
+# Tests the rng() function
 def testrng():
     easy = 0
     normal = 0
