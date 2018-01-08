@@ -19,3 +19,35 @@
 1. Open the terminal
 2. Navigate to the root folder containing log.sh
 3. Run `sh log.sh <lastF> <devmsg>`
+
+---
+
+### Project Progress
+
+**Completed:**
+
+* Login / Register
+    * Password hashing
+* Navbar
+* Easter Egg
+
+**To Do (In order of priority):**
+
+* Actual game
+    * Categories from API
+    * Categories into questions + answers
+    * Disable buttons for 3 seconds
+    * Points
+    * Points based on time
+* User profile
+    * Change password
+    * User record
+* Bot logic
+    * Randomly generated number of seconds (0,7] + 3
+* Custom categories
+* Wikipedia hookup
+* Bot difficulties
+    * Easy: Skew RNG to higher numbers (towards 6)
+    * Normal: Skew RNG to middleground numbers (towards 4)
+    * Hard: Skew RNG to lower numbers (towards 2)
+    * Insane: Skew RNG to really low numbers (towards 1)
