@@ -34,3 +34,6 @@ Updated templates so Categories only appears when logged in
 linK -- 2018-01-05 10:19:29
 Started adding bot logic. Skewed RNG implemented
 
+-e linK -- 2018-01-08 14:37:56
+Added point algorithm
+
