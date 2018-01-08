@@ -78,12 +78,20 @@ def question():
     if request.method == 'POST':
         category = request.form.get('subject')
     response = trivia.call_api(category)
-    print response[0]['question']
-    return render_template('question.html')
+    question = response[0]['question']
+    #print response[0]['incorrect_answers']
+    #print response[0]
+    incorrect_answers = response[0]['incorrect_answers']
+    correct_answer = response[0]['correct_answer']
+    return render_template('question.html', question = question, incorrect_answers = incorrect_answers, correct_answer = correct_answer)
 
 @app.route('/results')
 def results():
     return render_template('results.html')
+
+@app.route('/settings')
+def settings():
+    return render_template('settings.html')
     
 if __name__ == '__main__':
     app.debug = True
