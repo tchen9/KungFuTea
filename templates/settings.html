@@ -1,0 +1,12 @@
+{% extends 'frame.html' %}
+
+{% block content %}
+
+<h2>Change your password:</h2>
+<form method="GET" action="/settings">
+  Current Password: <input type="text" name="Current Password"> <br>
+  New Password: <input type="text" name="New Password"> <br>
+  Repeat New Password: <input type="text" name="Repeat New Password"> <br>
+</form>
+
+{% endblock %}
