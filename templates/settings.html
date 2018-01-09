@@ -2,11 +2,28 @@
 
 {% block content %}
 
-<h2>Change your password:</h2>
-<form method="GET" action="/settings">
-  Current Password: <input type="text" name="Current Password"> <br>
-  New Password: <input type="text" name="New Password"> <br>
-  Repeat New Password: <input type="text" name="Repeat New Password"> <br>
+<div class="container">
+  <div class="row">
+    <h1> <span class="badge badge-light">Change Password:</span></h1>
+  </div>
+  <div class="row">
+<form>
+  <div class="form-group">
+    <label for="currentpass">Current Password</label>
+    <input type="password" class="form-control" id="currentpassword">
+  </div>
+  <div class="form-group">
+    <label for="newpass">New Password</label>
+    <input type="password" class="form-control" id="newpassword">
+  </div>
+  <div class="form-group">
+    <label for="newpass2">Re-enter New Password</label>
+    <input type="password" class="form-control" id="newpassword2">
+  </div>
+  
+   <button type="submit" class="btn btn-primary mb-2">Submit</button>
 </form>
+  </div> 
+</div>
 
 {% endblock %}
