@@ -9,11 +9,13 @@
 
 <!-- Answer choices not randomized yet -->
 <div class="answers">
-  {% for answer in incorrect_answers %}
-  <button type="button" class="btn btn-danger btn-lg btn-block">
+  <form method="POST" action="/question">
+  {% for answer in answers %}
+  <button type="submit" name ="ansChoice"value="{{answer}}" class="btn btn-danger btn-lg btn-block">
     {{answer}}</button>
   {% endfor %}
-  <button type="button" class="btn btn-danger btn-lg btn-block">{{correct_answer}} </button>
+  </form>
+  <!--<button type="button" class="btn btn-danger btn-lg btn-block">{{correct_answer}} </button> -->
 </div>
 
   <!--
