@@ -46,3 +46,6 @@ temporary results page -> correct/incorrect, added most of the categories
 linK -- 2018-01-11 08:35:12
 Added redirects for invalid addresses to the index with a flash error
 
+linK -- 2018-01-11 10:09:03
+Reformatted categories page
+
