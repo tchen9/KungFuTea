@@ -49,3 +49,6 @@ Added redirects for invalid addresses to the index with a flash error
 linK -- 2018-01-11 10:09:03
 Reformatted categories page
 
+linK -- 2018-01-11 13:13:01
+Fixed auto-escaping unicode characters!
+
