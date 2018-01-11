@@ -24,6 +24,7 @@ def index():
 @app.route('/categories')
 def categories():
     if auth.logged_in():
+        flash('Welcome to the categories page. Select a category to play!')
         return render_template('categories.html')
     else:
         flash('Access error. You are not logged in.')
