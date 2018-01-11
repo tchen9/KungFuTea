@@ -12,5 +12,5 @@ def randomize(d):
     random.shuffle(answers)
     return answers
 
-response = call_api(9)
-print randomize(response[0])
+#response = call_api(9)
+#print randomize(response[0])

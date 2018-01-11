@@ -37,3 +37,9 @@ Started adding bot logic. Skewed RNG implemented
 -e linK -- 2018-01-08 14:37:56
 Added point algorithm
 
+ahmedF -- 2018-01-11 00:48:03
+randomized answers
+
+ahmedF -- 2018-01-11 00:49:01
+temporary results page -> correct/incorrect, added most of the categories
+

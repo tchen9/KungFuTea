@@ -75,19 +75,24 @@ def profile():
 
 @app.route('/question', methods = ['GET', 'POST'])
 def question():
-    response = trivia.call_api(category)
     if request.method == 'POST':
         category = request.form.get('subject')
-        #ansChoice = request.form.get('ansChoice')
-    #print ansChoice
+    global response
+    response = trivia.call_api(category)
     question = response[0]['question']
     answers = trivia.randomize(response[0])
-    correct_answer = response[0]['correct_answer']
-    return render_template('question.html', question = question, answers = answers, correct_answer = correct_answer)
+    return render_template('question.html', question = question, answers = answers)
 
-@app.route('/results')
+@app.route('/results', methods = ['GET', 'POST'])
 def results():
-    return render_template('results.html')
+    if request.method == 'POST':
+        choice = request.form.get('ansChoice')
+    global response
+    correct_answer = response[0]['correct_answer']
+    if choice == correct_answer:
+        return render_template('results.html', result = "CORRECT")
+    else:
+        return render_template('results.html', result = "INCORRECT", ans = "The correct answer is %s." % correct_answer)
 
 @app.route('/settings')
 def settings():
