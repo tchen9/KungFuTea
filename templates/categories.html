@@ -15,7 +15,10 @@ KaFooT - Categories
 </li>
 {% if logged_in() %}
 <li class="nav-item">
-    <a class="nav-link" href="#">My Stats</a>
+    <a class="nav-link" href="/profile">My Stats</a>
+</li>
+<li class="nav-item">
+  <a class="nav-link" href="/settings">Settings</a>
 </li>
 {% endif %}
 {% endblock %}
@@ -24,7 +27,26 @@ KaFooT - Categories
 
 <form method="POST" action="/question">
   <button type="submit" name="subject" value="9" class="btn btn-primary btn-lg btn-block"> General Knowledge </button>
-  <button type="submit" name="subject" value="10" class="btn btn-primary btn-lg btn-block"> Entertainment: Books </button>  
+  <button type="submit" name="subject" value="10" class="btn btn-primary btn-lg btn-block"> Books </button>  
+  <button type="submit" name="subject" value="11" class="btn btn-primary btn-lg btn-block"> Film </button>  
+  <button type="submit" name="subject" value="12" class="btn btn-primary btn-lg btn-block"> Music </button>
+  <button type="submit" name="subject" value="13" class="btn btn-primary btn-lg btn-block"> Musicals & Theatres </button>
+  <button type="submit" name="subject" value="14" class="btn btn-primary btn-lg btn-block"> Television </button>
+  <button type="submit" name="subject" value="15" class="btn btn-primary btn-lg btn-block"> Video Games </button>
+  <button type="submit" name="subject" value="16" class="btn btn-primary btn-lg btn-block"> Board Games </button>
+  <button type="submit" name="subject" value="17" class="btn btn-primary btn-lg btn-block"> Science & Nature </button>
+  <button type="submit" name="subject" value="18" class="btn btn-primary btn-lg btn-block"> Computers </button>
+  <button type="submit" name="subject" value="19" class="btn btn-primary btn-lg btn-block"> Mathematics </button>
+  <button type="submit" name="subject" value="20" class="btn btn-primary btn-lg btn-block"> Mythology </button>
+  <button type="submit" name="subject" value="21" class="btn btn-primary btn-lg btn-block"> Sports </button>
+  <button type="submit" name="subject" value="22" class="btn btn-primary btn-lg btn-block"> Geography </button>
+  <button type="submit" name="subject" value="23" class="btn btn-primary btn-lg btn-block"> History </button>
+  <button type="submit" name="subject" value="24" class="btn btn-primary btn-lg btn-block"> Politics </button>
+  <button type="submit" name="subject" value="25" class="btn btn-primary btn-lg btn-block"> Art </button>
+  <button type="submit" name="subject" value="26" class="btn btn-primary btn-lg btn-block"> Celebrities </button>
+  <button type="submit" name="subject" value="27" class="btn btn-primary btn-lg btn-block"> Animals </button>
+  <button type="submit" name="subject" value="28" class="btn btn-primary btn-lg btn-block"> Vehicles </button>
+  
 </form>
 
 <!--
