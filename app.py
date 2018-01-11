@@ -23,7 +23,11 @@ def index():
 #categories: Categories list page. Renders categories.html.
 @app.route('/categories')
 def categories():
-    return render_template('categories.html')
+    if auth.logged_in():
+        return render_template('categories.html')
+    else:
+        flash('Access error. You are not logged in.')
+        return redirect('index')
 
 #login: Login page. Renders login.html. Redirects to index after logging in.
 @app.route('/login', methods=['GET', 'POST'])
@@ -71,17 +75,25 @@ def register():
 
 @app.route('/profile')
 def profile():
-    return render_template('profile.html')
+    if auth.logged_in():
+        return render_template('profile.html')
+    else:
+        flash('Access error. You are not logged in.')
+        return redirect('index')
 
 @app.route('/question', methods = ['GET', 'POST'])
 def question():
-    if request.method == 'POST':
-        category = request.form.get('subject')
-    global response
-    response = trivia.call_api(category)
-    question = response[0]['question']
-    answers = trivia.randomize(response[0])
-    return render_template('question.html', question = question, answers = answers)
+    if auth.logged_in():
+        if request.method == 'POST':
+            category = request.form.get('subject')
+        global response
+        response = trivia.call_api(category)
+        question = response[0]['question']
+        answers = trivia.randomize(response[0])
+        return render_template('question.html', question = question, answers = answers)
+    else:
+        flash('Access error. You are not logged in.')
+        return redirect('index')
 
 @app.route('/results', methods = ['GET', 'POST'])
 def results():

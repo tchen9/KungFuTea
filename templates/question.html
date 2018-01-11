@@ -1,6 +1,10 @@
 {% extends 'frame.html' %}
 
--{% block content %}
+{% block customcss %}
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/custom/question.css') }}" />
+{% endblock %}
+
+{% block content %}
 <div class="container">
   <div class="jumbotron">
     {{question}}
@@ -11,9 +15,12 @@
 <div class="answers">
   <form method="POST" action="/results">
     {% for answer in answers %}
-    <button type="submit" name ="ansChoice"value="{{answer}}" class="btn btn-danger btn-lg btn-block">
+    <button type="submit" name="ansChoice" value="{{answer}}" class="btn btn-danger btn-lg btn-block ans-choice">
       {{answer}}</button>
     {% endfor %}
+    <button type="button" name="test-button" class="btn btn-danger btn-lg btn-block test-choice">
+      Press This For Testing
+    </button>
   </form>
   <!--<button type="button" class="btn btn-danger btn-lg btn-block">{{correct_answer}} </button> -->
 </div>
@@ -23,4 +30,8 @@
   <button type="button" class="btn btn-warning btn-lg btn-block">Answer2</button>
   <button type="button" class="btn btn-success btn-lg btn-block">Answer3</button>
   <button type="button" class="btn btn-info btn-lg btn-block">Answer4</button> -->
+{% endblock %}
+
+{% block customjs %}
+<script src="{{ url_for('static', filename='js/custom/question.js') }}" type="text/javascript"></script>
 {% endblock %}

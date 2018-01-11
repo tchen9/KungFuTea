@@ -1,36 +1,6 @@
 var ans_submitted = false; // Global answer submitted variable
 var g_time; // Global time variable
 
-// Function for selecting the correct answer. Not used atm.
-function submitAnswer(correctAnswer) {
-    var radios = document.getElementsByName("choice");
-    var i = 0,
-        len = radios.length;
-    var checked = false;
-    var userAnswer;
-
-    for (; i < len; i++) {
-        if (radios[i].checked) {
-            checked = true;
-            userAnswer = radios[i].value;
-        }
-    }
-    // if user click submit button without selecting any option, alert box should be say "please select choice answer".
-    if (!checked) {
-        alert("please select choice answer");
-        return;
-    }
-    // Correct answer
-    if (userAnswer === correctAnswer) {
-        alert("Answer is correct!");
-    }
-    // incorrect answer
-    else {
-        alert("Answer is wrong!");
-    }
-
-};
-
 function rng(min, max, skew) {
     var skew_dic = {
         0: 6, 
@@ -77,7 +47,7 @@ function q_and_a(ver) {
 };
 
 // Start the question
-$(".start-button").click(function() {
+$(".test-choice").click(function() {
     console.log("Button pressed");
     disable_answer_buttons(); // Disable buttons
     setTimeout(function() { // Sleep for 3 seconds
@@ -87,16 +57,16 @@ $(".start-button").click(function() {
 });
 
 function disable_answer_buttons() {
-    $(".answer-button").attr("disabled", "disabled");
+    $(".ans-choice").attr("disabled", "disabled");
     console.log("Answer buttons disabled");
 };
 
 function enable_answer_buttons() {
-    $(".answer-button").removeAttr("disabled");
+    $(".ans-choice").removeAttr("disabled");
     console.log("Answer buttons enabled");
 };
 
-$(".answer-button").click(function() {
+$(".ans-choice").click(function() {
     console.log("Answer button pressed");
     console.log(this.innerHTML);
     ans_submitted = true;

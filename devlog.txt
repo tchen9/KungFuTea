@@ -43,3 +43,6 @@ randomized answers
 ahmedF -- 2018-01-11 00:49:01
 temporary results page -> correct/incorrect, added most of the categories
 
+linK -- 2018-01-11 08:35:12
+Added redirects for invalid addresses to the index with a flash error
+
