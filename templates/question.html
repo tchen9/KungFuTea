@@ -7,7 +7,7 @@
 {% block content %}
 <div class="container">
   <div class="jumbotron">
-    {{question}}
+    {{question|safe}}
   </div>
 </div>
 
@@ -15,8 +15,8 @@
 <div class="answers">
   <form method="POST" action="/results">
     {% for answer in answers %}
-    <button type="submit" name="ansChoice" value="{{answer}}" class="btn btn-danger btn-lg btn-block ans-choice">
-      {{answer}}</button>
+    <button type="submit" name="ansChoice" value="{{answer|safe}}" class="btn btn-danger btn-lg btn-block ans-choice">
+      {{answer|safe}}</button>
     {% endfor %}
     <button type="button" name="test-button" class="btn btn-danger btn-lg btn-block test-choice">
       Press This For Testing
