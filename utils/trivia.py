@@ -12,5 +12,10 @@ def randomize(d):
     random.shuffle(answers)
     return answers
 
+#Takes in question dictionary and returns its correct answer
+def correct_answer(d):
+    return d['correct_answer']
+
+
 #response = call_api(9)
 #print randomize(response[0])
