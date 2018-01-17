@@ -1,9 +1,5 @@
 {% extends 'frame.html' %}
 
-{% block title %}
-KaFooT - Categories
-{% endblock %}
-
 {% block customcss %}
 <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/custom/categories.css') }}" />
 {% endblock %}
@@ -14,17 +10,21 @@ KaFooT - Categories
         <span class="sr-only">(current)</span>
     </a>
 </li>
+{% if logged_in() %}
 <li class="nav-item active">
     <a class="nav-link" href="{{ url_for('categories') }}">Categories</a>
 </li>
-{% if logged_in() %}
 <li class="nav-item">
-    <a class="nav-link" href="/profile">My Stats</a>
+    <a class="nav-link" href="{{ url_for('profile') }}">My Stats</a>
 </li>
 <li class="nav-item">
-  <a class="nav-link" href="/settings">Settings</a>
+    <a class="nav-link" href="{{ url_for('settings') }}">Settings</a>
 </li>
 {% endif %}
+{% endblock %}
+
+{% block title %}
+KaFooT - Categories
 {% endblock %}
 
 {% block content %}
