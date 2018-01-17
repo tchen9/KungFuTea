@@ -1,7 +1,7 @@
 #importing flask submodules
 from flask import Flask, render_template, request, redirect, url_for, session, flash
 #importing our own modules
-from utils import auth, trivia
+from utils import auth, trivia, database
 #importing os for urandom()
 import os
 
@@ -24,7 +24,7 @@ def index():
 @app.route('/categories')
 def categories():
     if auth.logged_in():
-        flash('Welcome to the categories page. Select a category to play!')
+        #flash('Welcome to the categories page. Select a category to play!')
         return render_template('categories.html')
     else:
         flash('Access error. You are not logged in.')
@@ -107,9 +107,27 @@ def results():
     else:
         return render_template('results.html', result = "INCORRECT", ans = "The correct answer is %s." % correct_answer)
 
-@app.route('/settings')
+@app.route('/settings', methods=['GET', 'POST'])
 def settings():
+    if auth.logged_in():
+        if request.method == "POST":
+            currentpassword = request.form.get('currentpassword')
+            newpassword = request.form.get('newpassword')
+            vertify = request.form.get('vertify')
+            if auth.encrypt(currentpassword) == database.get_password(session['username']):
+                if newpassword == vertify:
+                    database.change_password(session['username'], auth.encrypt(newpassword))
+                    flash('Successful password change.')
+                else:
+                    flash('Failed. Passwords do not match.')
+                    return redirect('/settings')
+            else:
+                flash('Failed. Wrong old password.')
+                return redirect('/settings')
+    else:
+        return redirect('index')
     return render_template('settings.html')
+
     
 if __name__ == '__main__':
     app.debug = True
