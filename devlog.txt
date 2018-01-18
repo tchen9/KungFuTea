@@ -63,3 +63,6 @@ finished changing password functionality
 
 chenT -- 2018-01-18 14:44:50
 updated css of the stats page
+linK -- 2018-01-18 14:49:33
+Added invisible inputs & re-arranged the buttons on various pages
+
