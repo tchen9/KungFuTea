@@ -129,7 +129,23 @@ def settings():
         return redirect('index')
     return render_template('settings.html')
 
-    
+# Route determines whether or not to continue the game or to submit the results and go back to the main page.
+# @app.route('/receive', methods = ['POST'])
+# def receive():{
+#     data = request.get_json() # {category, total points, question number, points to give}
+#     if trivia.reached_total(data[2]) == 1: # 10 questions have passed already.
+#         flash('You completed the game with a total score of ' + data[1] + '!')
+#         return redirect('index')
+#     else: # Otherwise, continue game
+#         if data[3] == 0: # If 0 points were earned...
+#             flash('You did not answer the question correctly.')
+#         else:
+#             flash('You earned ' + data[3] + ' points for that last question!')
+#         response = trivia.call_api(data[0])
+#         question = response[0]['question']
+#         answers = trivia.randomize(response[0])
+#         return render_template('question.html', question = question, answers = answers, totalpts = data[2])
+
 if __name__ == '__main__':
     app.debug = True
     app.run()

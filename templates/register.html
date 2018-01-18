@@ -19,7 +19,10 @@ KaFooT - Register
     <a class="nav-link" href="{{ url_for('categories') }}">Categories</a>
 </li>
 <li class="nav-item">
-    <a class="nav-link" href="#">My Stats</a>
+    <a class="nav-link" href="{{ url_for('profile') }}">My Stats</a>
+</li>
+<li class="nav-item">
+    <a class="nav-link" href="{{ url_for('settings') }}">Settings</a>
 </li>
 {% endif %}
 {% endblock %}

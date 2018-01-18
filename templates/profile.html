@@ -1,8 +1,42 @@
 {% extends 'frame.html' %}
 
+{% block title %}
+KaFooT - {{name}}'s Profile
+{% endblock %}
+
+{% block activenav %}
+<li class="nav-item">
+    <a class="nav-link" href="/">Home
+        <span class="sr-only">(current)</span>
+    </a>
+</li>
+{% if logged_in() %}
+<li class="nav-item">
+    <a class="nav-link" href="{{ url_for('categories') }}">Categories</a>
+</li>
+<li class="nav-item active">
+    <a class="nav-link" href="{{ url_for('profile') }}">My Stats</a>
+</li>
+<li class="nav-item">
+    <a class="nav-link" href="{{ url_for('settings') }}">Settings</a>
+</li>
+{% endif %}
+{% endblock %}
+
 {% block content %}
 
+<<<<<<< HEAD
 <center><p class="h1"> {{name}}'s Stats </p></center>
+=======
+<h1> Welcome {{name}} </h1>
+
+<ul class="list-group">
+  <li class="list-group-item">Past Games</li>
+
+  <li class="list-group-item list-group-item-secondary">math{{past}}</li>
+
+</ul>
+>>>>>>> 40df459007e080d0b11c4f9adc193315e682fde7
 
 <div class="container">
   <table class="table">
