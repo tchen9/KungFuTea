@@ -2,3 +2,8 @@
     max-width: 1110px;
     margin: auto;
 }
+
+.panel-heading h4,
+.panel-body {
+    text-align: center;
+}
