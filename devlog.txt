@@ -34,8 +34,14 @@ Updated templates so Categories only appears when logged in
 linK -- 2018-01-05 10:19:29
 Started adding bot logic. Skewed RNG implemented
 
+chenT -- 2018-01-05 14:45:23
+worked on questions html and formatting of answer choices
+
 -e linK -- 2018-01-08 14:37:56
 Added point algorithm
+
+chenT -- 2018-01-08 14:48:30
+worked on settings html and bootstrap
 
 ahmedF -- 2018-01-11 00:48:03
 randomized answers
@@ -52,3 +58,8 @@ Reformatted categories page
 linK -- 2018-01-11 13:13:01
 Fixed auto-escaping unicode characters!
 
+chenT -- 2018-01-17 14:48:44
+finished changing password functionality
+
+chenT -- 2018-01-18 14:44:50
+updated css of the stats page

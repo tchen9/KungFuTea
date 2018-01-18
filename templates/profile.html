@@ -25,6 +25,9 @@ KaFooT - {{name}}'s Profile
 
 {% block content %}
 
+<<<<<<< HEAD
+<center><p class="h1"> {{name}}'s Stats </p></center>
+=======
 <h1> Welcome {{name}} </h1>
 
 <ul class="list-group">
@@ -33,6 +36,23 @@ KaFooT - {{name}}'s Profile
   <li class="list-group-item list-group-item-secondary">math{{past}}</li>
 
 </ul>
+>>>>>>> 40df459007e080d0b11c4f9adc193315e682fde7
 
+<div class="container">
+  <table class="table">
+    <thead>
+      <tr>
+	<th>Category</th>
+	<th>Score</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+	<td>Math</td>
+	<td>100</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
 
 {% endblock %}

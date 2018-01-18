@@ -77,7 +77,8 @@ def register():
 @app.route('/profile')
 def profile():
     if auth.logged_in():
-        return render_template('profile.html')
+        name = session['username']
+        return render_template('profile.html', name=name)
     else:
         flash('Access error. You are not logged in.')
         return redirect('index')
