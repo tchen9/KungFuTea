@@ -28,42 +28,65 @@ KaFooT - Categories
 {% endblock %}
 
 {% block content %}
-
-<form method="POST" action="/question">
-    <div class="cat-cont text-center">
-        <div class="btn-group btn-group justified cat-group">
-            <button type="submit" name="subject" value="9" class="btn btn-primary btn-lg bth-block cat-choice"> General Knowledge </button>
-            <button type="submit" name="subject" value="10" class="btn btn-primary btn-lg bth-block cat-choice"> Books </button>
-            <button type="submit" name="subject" value="11" class="btn btn-primary btn-lg bth-block cat-choice"> Film </button>
-            <button type="submit" name="subject" value="12" class="btn btn-primary btn-lg bth-block cat-choice"> Music </button>
-        </div>
-        <div class="btn-group btn-group justified cat-group">
-            <button type="submit" name="subject" value="13" class="btn btn-primary btn-lg bth-block cat-choice"> Musicals & Theatres </button>
-            <button type="submit" name="subject" value="14" class="btn btn-primary btn-lg bth-block cat-choice"> Television </button>
-            <button type="submit" name="subject" value="15" class="btn btn-primary btn-lg bth-block cat-choice"> Video Games </button>
-            <button type="submit" name="subject" value="16" class="btn btn-primary btn-lg bth-block cat-choice"> Board Games </button>
-        </div>
-        <div class="btn-group btn-group justified cat-group">
-            <button type="submit" name="subject" value="17" class="btn btn-primary btn-lg bth-block cat-choice"> Science & Nature </button>
-            <button type="submit" name="subject" value="18" class="btn btn-primary btn-lg bth-block cat-choice"> Computers </button>
-            <button type="submit" name="subject" value="19" class="btn btn-primary btn-lg bth-block cat-choice"> Mathematics </button>
-            <button type="submit" name="subject" value="20" class="btn btn-primary btn-lg bth-block cat-choice"> Mythology </button>
-        </div>
-        <div class="btn-group btn-group justified cat-group">
-            <button type="submit" name="subject" value="21" class="btn btn-primary btn-lg bth-block cat-choice"> Sports </button>
-            <button type="submit" name="subject" value="22" class="btn btn-primary btn-lg bth-block cat-choice"> Geography </button>
-            <button type="submit" name="subject" value="23" class="btn btn-primary btn-lg bth-block cat-choice"> History </button>
-            <button type="submit" name="subject" value="24" class="btn btn-primary btn-lg bth-block cat-choice"> Politics </button>
-        </div>
-        <div class="btn-group btn-group justified cat-group">
-            <button type="submit" name="subject" value="25" class="btn btn-primary btn-lg bth-block cat-choice"> Art </button>
-            <button type="submit" name="subject" value="26" class="btn btn-primary btn-lg bth-block cat-choice"> Celebrities </button>
-            <button type="submit" name="subject" value="27" class="btn btn-primary btn-lg bth-block cat-choice"> Animals </button>
-            <button type="submit" name="subject" value="28" class="btn btn-primary btn-lg bth-block cat-choice"> Vehicles </button>
-        </div>
-    </div>
-</form>
-
+<div class="container">
+    <form method="POST" action="/question">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h1 class="panel-title">Categories</h3>
+                    </div>
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <button type="submit" name="subject" value="9" class="btn btn-primary btn-lg">General</button>
+                                <button type="submit" name="subject" value="25" class="btn btn-primary btn-lg">Art</button>
+                                <button type="submit" name="subject" value="13" class="btn btn-primary btn-lg">Theater</button>
+                                <button type="submit" name="subject" value="14" class="btn btn-primary btn-lg">Television</button>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <button type="submit" name="subject" value="19" class="btn btn-primary btn-lg">Math</button>
+                                <button type="submit" name="subject" value="17" class="btn btn-primary btn-lg">Science & Nature</button>
+                                <button type="submit" name="subject" value="18" class="btn btn-primary btn-lg">Computers</button>
+                                <button type="submit" name="subject" value="23" class="btn btn-primary btn-lg">History</button>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <button type="submit" name="subject" value="28" class="btn btn-primary btn-lg">Vehicles</button>
+                                <button type="submit" name="subject" value="10" class="btn btn-primary btn-lg">Books</button>
+                                <button type="submit" name="subject" value="11" class="btn btn-primary btn-lg">Film</button>
+                                <button type="submit" name="subject" value="12" class="btn btn-primary btn-lg">Music</button>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <button type="submit" name="subject" value="22" class="btn btn-primary btn-lg">Geography</button>
+                                <button type="submit" name="subject" value="27" class="btn btn-primary btn-lg">Animals</button>
+                                <button type="submit" name="subject" value="24" class="btn btn-primary btn-lg">Politics</button>
+                                <button type="submit" name="subject" value="26" class="btn btn-primary btn-lg">Celebrities</button>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <button type="submit" name="subject" value="15" class="btn btn-primary btn-lg">Video Games</button>
+                                <button type="submit" name="subject" value="16" class="btn btn-primary btn-lg">Board Games</button>
+                                <button type="submit" name="subject" value="20" class="btn btn-primary btn-lg">Mythology</button>
+                                <button type="submit" name="subject" value="21" class="btn btn-primary btn-lg">Sports</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel-footer">
+                        <div class="pull-left">
+                            Categories from OpenTriviaAPI
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </form>
+</div>
 <!--
 <a href="/question" class="btn btn-primary btn-lg bth-block cat-choice" role="button" aria-disabled="true">Math</a>
 
