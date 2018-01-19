@@ -66,6 +66,8 @@ updated css of the stats page
 linK -- 2018-01-18 14:49:33
 Added invisible inputs & re-arranged the buttons on various pages
 
+ahmedF -- 2018-01-19 14:21:08
+removed global variable
+
 linK -- 2018-01-19 14:31:30
 Updated README and added requirements.txt
-
