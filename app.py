@@ -88,11 +88,11 @@ def question():
     if auth.logged_in():
         if request.method == 'POST':
             category = request.form.get('subject')
-        global response
         response = trivia.call_api(category)
         question = response[0]['question']
         answers = trivia.randomize(response[0])
-        return render_template('question.html', question = question, answers = answers)
+        canswer = response[0]['correct_answer']
+        return render_template('question.html', question = question, answers = answers, canswer = canswer)
     else:
         flash('Access error. You are not logged in.')
         return redirect('index')
@@ -101,8 +101,7 @@ def question():
 def results():
     if request.method == 'POST':
         choice = request.form.get('ansChoice')
-    global response
-    correct_answer = response[0]['correct_answer']
+        correct_answer = request.form.get('c-answer')
     if choice == correct_answer:
         return render_template('results.html', result = "CORRECT")
     else:
