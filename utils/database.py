@@ -4,6 +4,7 @@ f = "kafoot.db"
 db = sqlite3.connect(f)
 c = db.cursor()
 c.execute('CREATE TABLE IF NOT EXISTS users (username TEXT PRIMARY KEY, password TEXT NOT NULL);')
+c.execute('CREATE TABLE IF NOT EXISTS stats (category TEXT PRIMARY KEY, score TEXT NOT NULL);')
 db.close()
 
 # Adds users to the user database
@@ -26,6 +27,28 @@ def adduser(username, password):
     db.close()
     return False
 
+#Adds stats to the stats database
+def addStat(category, score):
+    f = "kafoot.db"
+    db = sqlite3.connect(f)
+    c = db.cursor()
+    c.execute('INSERT INTO stats VALUES("%s", "%s");' %(category, score))
+    db.commit()
+    db.close()
+
+#returns a dictionary of the stats
+def getStats():
+    f = "kafoot.db"
+    db = sqlite3.connect(f)
+    c = db.cursor()
+    c.execute('INSERT INTO stats VALUES("math", "90");')
+    c.execute('INSERT INTO stats VALUES("eng", "90");')
+    #for i in c.execute('SELECT * FROM stats;'):
+        #print i
+    results = c.fetchall()
+    print results[0][0]
+
+getStats()
 # Returns true if the users database is empty
 # False Otherwise
 def empty_db():
