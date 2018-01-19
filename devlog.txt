@@ -37,7 +37,7 @@ Started adding bot logic. Skewed RNG implemented
 chenT -- 2018-01-05 14:45:23
 worked on questions html and formatting of answer choices
 
--e linK -- 2018-01-08 14:37:56
+linK -- 2018-01-08 14:37:56
 Added point algorithm
 
 chenT -- 2018-01-08 14:48:30
@@ -63,6 +63,7 @@ finished changing password functionality
 
 chenT -- 2018-01-18 14:44:50
 updated css of the stats page
+
 linK -- 2018-01-18 14:49:33
 Added invisible inputs & re-arranged the buttons on various pages
 
