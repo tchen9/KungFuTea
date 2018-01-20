@@ -78,7 +78,11 @@ def register():
 def profile():
     if auth.logged_in():
         name = session['username']
-        return render_template('profile.html', name=name)
+        stats = database.getStats(name)
+        statsHTML = ""
+        for i in stats:
+            statsHTML += '<tr><td>' + i[0] + '</td><td>' + i[1] + '</td></tr>'
+        return render_template('profile.html', name=name, stats=statsHTML)
     else:
         flash('Access error. You are not logged in.')
         return redirect('index')
