@@ -36,7 +36,12 @@ KaFooT - {{name}}'s Profile
       </tr>
     </thead>
     <tbody>
-      {{stats}}
+      {% for stat in statsHTML %}
+      <tr>
+	<td>{{stat.category}}</td>
+	<td>{{stat.score}}</td>
+      </tr>
+      {% endfor %}
     </tbody>
   </table>
 </div>

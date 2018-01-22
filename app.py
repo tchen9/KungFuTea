@@ -79,10 +79,11 @@ def profile():
     if auth.logged_in():
         name = session['username']
         stats = database.getStats(name)
-        statsHTML = ""
+        statsHTML = []
         for i in stats:
-            statsHTML += '<tr><td>' + i[0] + '</td><td>' + i[1] + '</td></tr>'
-        return render_template('profile.html', name=name, stats=statsHTML)
+            item = dict(category=i[0], score=i[1])
+            statsHTML.append(item)
+        return render_template('profile.html', name=name, statsHTML=statsHTML)
     else:
         flash('Access error. You are not logged in.')
         return redirect('index')
