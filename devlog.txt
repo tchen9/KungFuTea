@@ -78,3 +78,6 @@ worked on stats database
 
 chenT -- 2018-01-22 16:39:20
 finished stats functionality with HTML and app.py
+
+chenT -- 2018-01-22 20:27:23
+updated settings bootstrap
