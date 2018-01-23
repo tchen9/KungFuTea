@@ -1,9 +1,10 @@
-import os, database, hashlib, database
+import os, hashlib
 from flask import session
+from utils import database
 
 #encrypts passwords
 def encrypt(password):
-    return hashlib.sha224(password).hexdigest()
+    return hashlib.sha224(password.encode('utf-8')).hexdigest()
 
 #creates a new user
 def new_user(username, password):

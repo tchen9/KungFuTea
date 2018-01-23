@@ -1,5 +1,5 @@
-import requests
 import random
+import requests
 
 def call_api(category):
     #category is a number (9-32)
