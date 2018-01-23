@@ -7,3 +7,14 @@
 .panel-body {
     text-align: center;
 }
+
+#myProgress{
+    width: 100%;
+    background-color: blue;
+}
+
+#myBar{
+    width: 0%;
+    height: 30px;
+    background-color: gray;
+}

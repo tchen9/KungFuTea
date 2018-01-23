@@ -93,3 +93,6 @@ Fixed unicode encoding error
 ahmedF -- 2018-01-23 14:51:48
 added scores to stats, there are still repeating questions, and score is sent through query string still
 
+ahmedF -- 2018-01-23 16:40:13
+added countdown bar, alerts when time is up, no points for incorrect or out of time
+
