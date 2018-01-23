@@ -92,12 +92,13 @@ def profile():
 def question():
     if auth.logged_in():
         if request.method == 'POST':
-            category = request.form.get('subject')
-        response = trivia.call_api(category)
+            catNum = request.form.get('subject')
+        response = trivia.call_api(catNum)
+        category = response[0]['category']
         question = response[0]['question']
         answers = trivia.randomize(response[0])
         canswer = response[0]['correct_answer']
-        return render_template('question.html', question = question, answers = answers, canswer = canswer)
+        return render_template('question.html', question = question, answers = answers, canswer = canswer, category = category)
     else:
         flash('Access error. You are not logged in.')
         return redirect('index')
@@ -127,10 +128,16 @@ def settings():
 #sends score through query string, we need a better method since users can insert their own scores through the link
 @app.route('/results')
 def results():
-    score = request.args.get('score')
-    #database stuff
-    return render_template('results.html', score = score)
-    
+    if auth.logged_in():
+        name = session['username']
+        score = request.args.get('score')
+        category = request.args.get('category')
+        database.addStat(name,category,score)
+        return render_template('results.html', score=score, category=category)
+    else:
+        flash('Access error. You are not logged in.')
+        return redirect('index')
+   
 
 # Route determines whether or not to continue the game or to submit the results and go back to the main page.
 # @app.route('/receive', methods = ['POST'])

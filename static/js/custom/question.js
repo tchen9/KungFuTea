@@ -69,7 +69,8 @@ function startQ() {
     if(n >= 10){
 	//redirect to results page
 	//alert("Your score is " + myScore + "!\nCheck out My Stats for all your scores.");
-	window.location.href = '/results?score=' + myScore;
+	var category = document.getElementsByName("category")[0].value;
+	window.location.href = '/results?score=' + myScore + '&category=' + category;
     }
     disable_answer_buttons(); // Disable buttons
     setTimeout(function() { // Sleep for 3 seconds

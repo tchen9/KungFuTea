@@ -90,3 +90,6 @@ results page is back, shows total score, 10 questions are shown but some are rep
 linK -- 2018-01-23 11:37:11
 Fixed unicode encoding error
 
+ahmedF -- 2018-01-23 14:51:48
+added scores to stats, there are still repeating questions, and score is sent through query string still
+
