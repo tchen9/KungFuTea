@@ -84,3 +84,6 @@ updated settings bootstrap
 
 ahmedF -- 2018-01-22 21:02:56
 buttons disabled onload, rearranged buttons, check for correct answer and alerts correct/incorrect and then reloads another questions, but points still aren't given for correct answer
+ahmedF -- 2018-01-23 02:00:46
+results page is back, shows total score, 10 questions are shown but some are repeated, need stats database updating
+

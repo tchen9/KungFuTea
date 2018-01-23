@@ -1,5 +1,15 @@
 var ans_submitted = false; // Global answer submitted variable
 var g_time; // Global time variable
+var n = localStorage.getItem('on_load_counter');//reload counter
+if (n === null) {
+    n = 0;}
+n++;
+localStorage.setItem("on_load_counter", n);
+var myScore = localStorage.getItem("my_score");
+if (myScore === null) {
+    myScore = 0;
+}
+console.log(myScore);
 
 function rng(min, max, skew) {
     var skew_dic = {
@@ -36,12 +46,14 @@ function q_and_a(ver,ansChoice) {
                 alert("Took too long to answer!\nYou took " + ((duration / 1000) - 7).toFixed(0) + " seconds too long to answer!");
                 return 0;
             } else {
-                var points_assigned = assign_points(duration / 1000).toFixed(0);
 		var canswer = document.getElementsByName("c-answer")[0].value;
 		if (canswer != ansChoice){
 		    alert("INCORRECT\nCorrect answer is: " + canswer);
 		} else{
+                    var points_assigned = assign_points(duration / 1000).toFixed(0);
+		    myScore = Number(myScore) + Number(points_assigned);
 		    alert("CORRECT\nYou answered in " + (duration / 1000) + " seconds! Wow!\nPoints to give: " + points_assigned);
+		    localStorage.setItem("my_score", myScore);
 		}
                 return points_assigned; 
             }
@@ -51,8 +63,14 @@ function q_and_a(ver,ansChoice) {
 
 // Start the question
 //$(".test-choice").click(function() {
-function startQ() { 
-    console.log("Button pressed");
+function startQ() {
+    console.log(n);
+    //reloads new question 10 times
+    if(n >= 10){
+	//redirect to results page
+	//alert("Your score is " + myScore + "!\nCheck out My Stats for all your scores.");
+	window.location.href = '/results?score=' + myScore;
+    }
     disable_answer_buttons(); // Disable buttons
     setTimeout(function() { // Sleep for 3 seconds
         enable_answer_buttons(); // Enable buttons

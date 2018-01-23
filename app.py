@@ -123,6 +123,15 @@ def settings():
         return redirect('index')
     return render_template('settings.html')
 
+
+#sends score through query string, we need a better method since users can insert their own scores through the link
+@app.route('/results')
+def results():
+    score = request.args.get('score')
+    #database stuff
+    return render_template('results.html', score = score)
+    
+
 # Route determines whether or not to continue the game or to submit the results and go back to the main page.
 # @app.route('/receive', methods = ['POST'])
 # def receive():{
