@@ -29,7 +29,7 @@ KaFooT - Game
 
 {% block content %}
 <div class="container">
-  <form method="POST" action="/results">
+  <form method="POST" onSubmit="return false">
     <!-- Invisible correct answer input -->
     <input type="text" style="display: none;" value="{{canswer|safe}}" name="c-answer" class="form-control"/>
     <!-- Invisible total points input -->
@@ -45,7 +45,7 @@ KaFooT - Game
         </div>
         <div class="panel-body">
           {% for answer in answers %}
-          <button type="submit" name="ansChoice" value="{{answer|safe}}" class="btn btn-danger btn-lg ans-choice">
+          <button type="submit" name="ansChoice" value="{{answer|safe}}" class="btn btn-danger btn-lg btn-block ans-choice">
             {{answer|safe}}
           </button>
           {% endfor %}
@@ -53,21 +53,14 @@ KaFooT - Game
       </div>
     </div>
   </form>
+  <br><a href="/categories" class="btn btn-info btn-lg" style="float:right"> Return to Categories </a>
 </div>
 
-<!-- Answer choices not randomized yet -->
     <!--
     <button type="button" name="test-button" class="btn btn-danger btn-lg btn-block test-choice">
       Press This For Testing
-    </button>
+    </button>    
     -->
-  <!--<button type="button" class="btn btn-danger btn-lg btn-block">{{correct_answer}} </button> -->
-
-  <!--
-  <button type="button" class="btn btn-danger btn-lg btn-block">Answer1</button>
-  <button type="button" class="btn btn-warning btn-lg btn-block">Answer2</button>
-  <button type="button" class="btn btn-success btn-lg btn-block">Answer3</button>
-  <button type="button" class="btn btn-info btn-lg btn-block">Answer4</button> -->
 {% endblock %}
 
 {% block customjs %}

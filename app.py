@@ -102,16 +102,6 @@ def question():
         flash('Access error. You are not logged in.')
         return redirect('index')
 
-@app.route('/results', methods = ['GET', 'POST'])
-def results():
-    if request.method == 'POST':
-        choice = request.form.get('ansChoice')
-        correct_answer = request.form.get('c-answer')
-    if choice == correct_answer:
-        return render_template('results.html', result = "CORRECT")
-    else:
-        return render_template('results.html', result = "INCORRECT", ans = "The correct answer is %s." % correct_answer)
-
 @app.route('/settings', methods=['GET', 'POST'])
 def settings():
     if auth.logged_in():

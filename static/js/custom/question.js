@@ -21,7 +21,7 @@ function assign_points(time) {
 // Ver is 1 or 2
 // 1 for start button
 // 2 for answer button
-function q_and_a(ver) {
+function q_and_a(ver,ansChoice) {
     if (ver == 1) {
         g_time = time_now(); // Returns the current time. Used for checking the amount of time it took to answer the question.
         ans_submitted = false;
@@ -33,13 +33,16 @@ function q_and_a(ver) {
             var duration = c_time - g_time; // Elapsed time
             // If more than 7 seconds were taken to answer reject.
             if (duration > 7000) {
-                console.log("Took too long to answer!");
-                console.log("You took " + ((duration / 1000) - 7).toFixed(0) + " seconds too long to answer!");
+                alert("Took too long to answer!\nYou took " + ((duration / 1000) - 7).toFixed(0) + " seconds too long to answer!");
                 return 0;
             } else {
-                console.log("You answered in " + (duration / 1000) + " seconds! Wow!");
                 var points_assigned = assign_points(duration / 1000).toFixed(0);
-                console.log("Points to give: " + points_assigned);
+		var canswer = document.getElementsByName("c-answer")[0].value;
+		if (canswer != ansChoice){
+		    alert("INCORRECT\nCorrect answer is: " + canswer);
+		} else{
+		    alert("CORRECT\nYou answered in " + (duration / 1000) + " seconds! Wow!\nPoints to give: " + points_assigned);
+		}
                 return points_assigned; 
             }
         }
@@ -47,14 +50,15 @@ function q_and_a(ver) {
 };
 
 // Start the question
-$(".test-choice").click(function() {
+//$(".test-choice").click(function() {
+function startQ() { 
     console.log("Button pressed");
     disable_answer_buttons(); // Disable buttons
     setTimeout(function() { // Sleep for 3 seconds
         enable_answer_buttons(); // Enable buttons
         q_and_a(1); // Set global time variable + reset ans_submitted
     }, 3000);
-});
+};
 
 function disable_answer_buttons() {
     $(".ans-choice").attr("disabled", "disabled");
@@ -68,12 +72,15 @@ function enable_answer_buttons() {
 
 $(".ans-choice").click(function() {
     console.log("Answer button pressed");
-    console.log(this.innerHTML);
     ans_submitted = true;
-    q_and_a(2);
+    var choice = $(this).val();
+    q_and_a(2, choice);
+    window.location.reload();
 });
 
 function time_now() {
     var date = new Date().getTime();
     return date;
 };
+
+document.addEventListener('DOMContentLoaded', startQ);
