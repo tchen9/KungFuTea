@@ -51,7 +51,6 @@ function q_and_a(ver,ansChoice) {
 };
 
 // Start the question
-//$(".test-choice").click(function() {
 function startQ() {
     console.log(n);
     disable_answer_buttons(); // Disable buttons
@@ -93,6 +92,14 @@ $(".ans-choice").click(function() {
     var choice = $(this).val();
     q_and_a(2, choice);
     window.location.reload();
+});
+
+$(".cat").click(function() {
+    var exit = confirm("Are you sure you want to exit?\nLeaving this page will exit this game and the points will not be counted.");
+    if(exit){
+	localStorage.clear();
+	window.location.href = "/categories";
+    }
 });
 
 function time_now() {

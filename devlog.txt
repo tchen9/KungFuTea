@@ -105,3 +105,6 @@ Moved bot logic from question.js to game.py and completed it
 
 ahmedF -- 2018-01-23 22:11:44
 get score from t-points hidden input
+ahmedF -- 2018-01-23 22:33:19
+return to categories cancels game and resets localStorage
+
