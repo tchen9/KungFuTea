@@ -11,16 +11,6 @@ if (myScore === null) {
 }
 //console.log(myScore);
 
-function rng(min, max, skew) {
-    var skew_dic = {
-        0: 6, 
-        1: 2, 
-        2: 0.75, 
-        3: 0.1
-    };
-    var result = min + (max - min) * Math.pow(random.random(), skew_dic[skew]);
-    return result;
-};
 
 function assign_points(time) {
     var points_given = 0;
