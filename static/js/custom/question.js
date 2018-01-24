@@ -68,8 +68,9 @@ function startQ() {
     }, 10000);
 };
 
+//reloads for up to 5 questions and then onSubmit = "return true" and action goes to the results page from the question form
 function ValidationEvent() {
-    if(n >= 10){
+    if(n >= 5){
 	document.getElementsByName('t-points')[0].value =  myScore;
 	localStorage.clear();
 	return true;
