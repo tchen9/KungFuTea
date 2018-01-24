@@ -29,7 +29,7 @@ KaFooT - Game
 
 {% block content %}
 <div class="container">
-  <form method="POST" onSubmit="return false">
+  <form method="POST" onSubmit="return ValidationEvent()" action="/results">
     <!-- Invisible correct answer input -->
     <input type="text" style="display: none;" value="{{canswer|safe}}" name="c-answer" class="form-control"/>
     <!-- Invisible total points input -->

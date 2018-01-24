@@ -1,15 +1,19 @@
 var ans_submitted = false; // Global answer submitted variable
 var g_time; // Global time variable
-var n = localStorage.getItem('on_load_counter');//reload counter
+
+//reload counter
+var n = localStorage.getItem('on_load_counter');
 if (n === null) {
     n = 0;}
 n++;
 localStorage.setItem("on_load_counter", n);
+document.getElementsByName('q-num')[0].value = n; //not sure if we need this
+
+//keeps score count, updated with right answers
 var myScore = localStorage.getItem("my_score");
 if (myScore === null) {
     myScore = 0;
 }
-//console.log(myScore);
 
 function rng(min, max, skew) {
     var skew_dic = {
@@ -60,13 +64,6 @@ function q_and_a(ver,ansChoice) {
 //$(".test-choice").click(function() {
 function startQ() {
     console.log(n);
-    //reloads new question 10 times
-    if(n >= 11){
-	//redirect to results page
-	//alert("Your score is " + myScore + "!\nCheck out My Stats for all your scores.");
-	var category = document.getElementsByName("category")[0].value;
-	window.location.href = '/results?score=' + myScore + '&category=' + category;
-    }
     disable_answer_buttons(); // Disable buttons
     setTimeout(function() { // Sleep for 3 seconds
         enable_answer_buttons(); // Enable buttons
@@ -78,6 +75,17 @@ function startQ() {
 	window.location.reload();
     }, 10000);    
 };
+
+function ValidationEvent() {
+    if(n >= 10){
+	document.getElementsByName('t-points')[0].value =  myScore;
+	localStorage.clear();
+	return true;
+    }
+    else{
+	return false;
+    }
+}
 
 function disable_answer_buttons() {
     $(".ans-choice").attr("disabled", "disabled");
