@@ -2,6 +2,8 @@
 
 **K**yle Lin - **F**abiha Ahmed - **T**ina Chen
 
+Period 9
+
 ---
 
 ![KaFooT](https://i.imgur.com/jnpT4oF.png)
@@ -11,6 +13,12 @@
 ## General Description:
 
 **KaFooT** is a educational game website that derives its inspiration from Kahoot. The user can select the trivia genre from a list of categories that are pre-defined or user-defined. The user gains points based on whether or not the correct answer is selected within a set time period; there is no penalty for answering wrong. The user has the option of reading more about the current question after the answer has been selected if desired.
+
+---
+
+## Youtube Demonstration:
+
+[Click me!](https://youtu.be/bjM9lUsFExU)
 
 ---
 
