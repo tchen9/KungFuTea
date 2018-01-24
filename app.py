@@ -127,12 +127,13 @@ def settings():
 
 
 #sends score through query string, we need a better method since users can insert their own scores through the link
-@app.route('/results')
+@app.route('/results',  methods=['GET', 'POST'])
 def results():
     if auth.logged_in():
         name = session['username']
-        score = request.args.get('score')
-        category = request.args.get('category')
+        if request.method == "POST":
+            score = request.form.get('t-points')
+            category = request.form.get('category')
         database.addStat(name,category,score)
         return render_template('results.html', score=score, category=category)
     else:

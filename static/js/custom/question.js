@@ -1,16 +1,24 @@
 var ans_submitted = false; // Global answer submitted variable
 var g_time; // Global time variable
+<<<<<<< HEAD
 var n = localStorage.getItem('on_load_counter'); //reload counter
+=======
+
+//reload counter
+var n = localStorage.getItem('on_load_counter');
+>>>>>>> f67deb51adf43ee473cf6a2d68f67d71030839ab
 if (n === null) {
     n = 0;
 }
 n++;
 localStorage.setItem("on_load_counter", n);
+document.getElementsByName('q-num')[0].value = n; //not sure if we need this
+
+//keeps score count, updated with right answers
 var myScore = localStorage.getItem("my_score");
 if (myScore === null) {
     myScore = 0;
 }
-//console.log(myScore);
 
 
 function assign_points(time) {
@@ -50,7 +58,6 @@ function q_and_a(ver, ansChoice) {
 };
 
 // Start the question
-//$(".test-choice").click(function() {
 function startQ() {
     console.log(n);
     //reloads new question 10 times
@@ -72,6 +79,17 @@ function startQ() {
     }, 10000);
 };
 
+function ValidationEvent() {
+    if(n >= 10){
+	document.getElementsByName('t-points')[0].value =  myScore;
+	localStorage.clear();
+	return true;
+    }
+    else{
+	return false;
+    }
+}
+
 function disable_answer_buttons() {
     $(".ans-choice").attr("disabled", "disabled");
     console.log("Answer buttons disabled");
@@ -88,6 +106,14 @@ $(".ans-choice").click(function () {
     var choice = $(this).val();
     q_and_a(2, choice);
     window.location.reload();
+});
+
+$(".cat").click(function() {
+    var exit = confirm("Are you sure you want to exit?\nLeaving this page will exit this game and the points will not be counted.");
+    if(exit){
+	localStorage.clear();
+	window.location.href = "/categories";
+    }
 });
 
 function time_now() {
