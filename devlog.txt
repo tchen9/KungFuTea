@@ -4,6 +4,9 @@ Initial Commits
 linK -- 2017-12-20 14:49:25
 Added login
 
+chenT -- 2017-12-20 14:50:11
+added basic html templates
+
 linK -- 2017-12-21 08:29:23
 Added more templates
 
@@ -34,13 +37,13 @@ Updated templates so Categories only appears when logged in
 linK -- 2018-01-05 10:19:29
 Started adding bot logic. Skewed RNG implemented
 
-chenT -- 2018-01-05 14:45:23
-worked on questions html and formatting of answer choices
-
 linK -- 2018-01-08 14:37:56
 Added point algorithm
 
 chenT -- 2018-01-08 14:48:30
+worked on bootstrap of navigation bars
+
+chenT -- 2018-01-09 14:49:32
 worked on settings html and bootstrap
 
 ahmedF -- 2018-01-11 00:48:03
@@ -73,17 +76,18 @@ removed global variable
 linK -- 2018-01-19 14:31:30
 Updated README and added requirements.txt
 
-chenT -- 2018-01-20 16:01:29
+chenT -- 2018-01-19 14:47:29
 worked on stats database 
 
-chenT -- 2018-01-22 16:39:20
-finished stats functionality with HTML and app.py
+chenT -- 2018-01-20 16:39:20
+updated stats functionality with HTML and app.py
 
 chenT -- 2018-01-22 20:27:23
-updated settings bootstrap
+updated settings.html's bootstrap and finished stats functionality
 
 ahmedF -- 2018-01-22 21:02:56
 buttons disabled onload, rearranged buttons, check for correct answer and alerts correct/incorrect and then reloads another questions, but points still aren't given for correct answer
+
 ahmedF -- 2018-01-23 02:00:46
 results page is back, shows total score, 10 questions are shown but some are repeated, need stats database updating
 
