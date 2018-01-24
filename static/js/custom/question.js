@@ -1,12 +1,8 @@
 var ans_submitted = false; // Global answer submitted variable
 var g_time; // Global time variable
-<<<<<<< HEAD
-var n = localStorage.getItem('on_load_counter'); //reload counter
-=======
 
 //reload counter
 var n = localStorage.getItem('on_load_counter');
->>>>>>> f67deb51adf43ee473cf6a2d68f67d71030839ab
 if (n === null) {
     n = 0;
 }
@@ -60,13 +56,6 @@ function q_and_a(ver, ansChoice) {
 // Start the question
 function startQ() {
     console.log(n);
-    //reloads new question 10 times
-    if (n >= 11) {
-        //redirect to results page
-        //alert("Your score is " + myScore + "!\nCheck out My Stats for all your scores.");
-        var category = document.getElementsByName("category")[0].value;
-        window.location.href = '/results?score=' + myScore + '&category=' + category;
-    }
     disable_answer_buttons(); // Disable buttons
     setTimeout(function () { // Sleep for 3 seconds
         enable_answer_buttons(); // Enable buttons
@@ -123,14 +112,13 @@ function time_now() {
 
 function move() {
     var elem = document.getElementById("myBar");
-    var width = 0;
-    var id = setInterval(frame, 1000);
-
+    var width = 2;
+    var id = setInterval(frame, 10);
     function frame() {
-        if (width >= 96) {
+        if (width >= 100) {
             clearInterval(id);
         } else {
-            width += 16;
+            width += 0.14;
             elem.style.width = width + '%';
         }
     }
