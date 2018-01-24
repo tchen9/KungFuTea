@@ -103,3 +103,6 @@ added countdown bar, alerts when time is up, no points for incorrect or out of t
 linK -- 2018-01-23 22:08:36
 Moved bot logic from question.js to game.py and completed it
 
+linK -- 2018-01-24 00:07:30
+Added bots to the backend
+
