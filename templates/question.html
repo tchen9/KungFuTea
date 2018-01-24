@@ -30,6 +30,8 @@ KaFooT - Game
 {% block content %}
 <div class="container">
   <form method="POST" onSubmit="return false">
+    <!-- Invisible bot data -->
+    <input type="text" style="display: none;" value="{{bots|safe}}" name="b-store" class="form-control"/>
     <!-- Invisible correct answer input -->
     <input type="text" style="display: none;" value="{{canswer|safe}}" name="c-answer" class="form-control"/>
     <!-- Invisible total points input -->

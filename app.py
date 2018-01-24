@@ -1,9 +1,9 @@
 #importing flask submodules
 from flask import Flask, render_template, request, redirect, url_for, session, flash
 #importing our own modules
-from utils import auth, trivia, database
+from utils import auth, trivia, database, game
 #importing os for urandom()
-import os
+import os, json
 
 app = Flask(__name__)
 
@@ -98,7 +98,8 @@ def question():
         question = response[0]['question']
         answers = trivia.randomize(response[0])
         canswer = response[0]['correct_answer']
-        return render_template('question.html', question = question, answers = answers, canswer = canswer, category = category)
+        bots = json.dumps(game.gen_bots(request.form.get('b-difficulty')))
+        return render_template('question.html', question = question, answers = answers, canswer = canswer, category = category, bots = bots)
     else:
         flash('Access error. You are not logged in.')
         return redirect('index')

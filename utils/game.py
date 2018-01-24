@@ -1,7 +1,7 @@
 # This file contains game logic
 # Can be accessed via js using AJAX
 
-import random
+import random, json
 
 # Gives points based on the amount of time taken
 # Formula = 49 (7 ^ 2) - time taken ^ 2.
@@ -53,9 +53,21 @@ class Bot(object):
         result = min + (max - min) * pow(random.random(), skew_dic[skew])
         return result
 
+    # Returns total points at that question in time
+    def total_points(self, question_num):
+        points = 0
+        for i in range(0, question_num):
+            if self.responses[i][0] == True:
+                points += self.responses[i][1]
+        return points
+
 # Generates 10 bots with predetermined data.
 def gen_bots(difficulty):
     bots_list = {}
     for i in range(0, 20):
         bots_list[i] = Bot(i, difficulty)
+    bots_list = to_json(bots_list)
     return bots_list
+
+def to_json(dic):
+        return json.dumps(dic, default=lambda o: o.__dict__, sort_keys=True, indent=4)
