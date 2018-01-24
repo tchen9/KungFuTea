@@ -100,6 +100,8 @@ added scores to stats, there are still repeating questions, and score is sent th
 ahmedF -- 2018-01-23 16:40:13
 added countdown bar, alerts when time is up, no points for incorrect or out of time
 
+linK -- 2018-01-23 22:08:36
+Moved bot logic from question.js to game.py and completed it
+
 ahmedF -- 2018-01-23 22:11:44
 get score from t-points hidden input
-
