@@ -53,6 +53,8 @@
     * Categories into questions + answers
     * Disable buttons for 3 seconds
     * Points based on time
+    * Points counter
+    * Consecutive questions
 * User profile
     * Change password
     * User record
@@ -61,15 +63,18 @@
     * Normal: Skew RNG to middleground numbers (towards 4)
     * Hard: Skew RNG to lower numbers (towards 2)
     * Insane: Skew RNG to really low numbers (towards 1)
+* Bot logic
+    * Generate bots with difficulty
+    * Randomly generated number of seconds (0,7] + 3
+
+**Bugs:**
+
+* Pressing a new category if you've already played a game gives you the points of the played game immediately and doesn't let you play.
 
 **To Do (In order of priority):**
 
-* Actual game
-    * Points
-    * Consecutive questions
-* Bot logic
-    * Generate bots
-    * Randomly generated number of seconds (0,7] + 3
+* Bots
+    * Implement ranking with bots
 * Wikipedia hookup
 * Custom categories
 * Multiplayer
